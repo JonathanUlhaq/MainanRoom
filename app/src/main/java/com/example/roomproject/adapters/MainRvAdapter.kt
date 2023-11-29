@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.roomproject.databinding.ItemLayoutBinding
 import com.example.roomproject.entities.NoteEntity
 
-class MainRvAdapter(private val list: List<NoteEntity>) :
+class MainRvAdapter(private val list: List<NoteEntity>,val onClick:(Int) -> Unit) :
     RecyclerView.Adapter<MainRvAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)
@@ -27,6 +27,9 @@ class MainRvAdapter(private val list: List<NoteEntity>) :
             with(list[position]) {
                 binding.tvName.text = this.name
                 binding.tvNumber.text = this.number
+                binding.cdCard.setOnClickListener {
+                    onClick.invoke(this.id)
+                }
             }
         }
     }

@@ -12,6 +12,9 @@ interface Dao {
     @Query("SELECT * FROM tb_note")
     fun getAllNoteData():LiveData<List<NoteEntity>>
 
+    @Query("SELECT * FROM tb_note WHERE id = :id")
+    fun getNoteId(id:Int):LiveData<NoteEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertData(data:NoteEntity)
 }

@@ -8,5 +8,6 @@ class NoteRepository(
     val database:DatabaseNote
 ) {
     fun getAllNoteData():LiveData<List<NoteEntity>> = database.dao().getAllNoteData()
+    fun getNoteId(id:Int):LiveData<NoteEntity> = database.dao().getNoteId(id)
     suspend fun insertData(data:NoteEntity) = database.dao().insertData(data)
 }

@@ -17,7 +17,10 @@ class NoteViewModel(
             repo.insertData(data)
         }
 
+    fun getNoteId(id:Int) =
+        repo.getNoteId(id)
+
 //    init {
-//        insertData(data = NoteEntity(name = "Halo dek", number = "08129392"))
+//        insertData(data = NoteEntity(name = "Kulaih atau kerja", number = "08129392"))
 //    }
 }

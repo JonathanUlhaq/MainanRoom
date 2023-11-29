@@ -1,12 +1,10 @@
-package com.example.roomproject
+package com.example.roomproject.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.roomproject.adapters.MainRvAdapter
 import com.example.roomproject.database.DatabaseNote
 import com.example.roomproject.databinding.ActivityMainBinding
@@ -28,17 +26,29 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     fun init(vm:NoteViewModel) {
         changeData(vm) {
             list ->
             val layoutManager = LinearLayoutManager(this@MainActivity)
             binding.rvList.layoutManager = layoutManager
-            adapter = MainRvAdapter(list)
+            adapter = MainRvAdapter(list) {
+                val intent = Intent(this,DetailActivity::class.java)
+                intent.putExtra("ID_NOTE",it.toString())
+                startActivity(intent)
+            }
             binding.rvList.adapter = adapter
         }
+        onClick()
 
     }
-
+    fun onClick() {
+        binding.fabAdd.setOnClickListener {
+            val intent = Intent(this,AddActivity::class.java)
+            startActivity(intent)
+        }
+    }
     fun noteViewModel(): NoteViewModel {
         val database = DatabaseNote(this)
         val repo = NoteRepository(database)
