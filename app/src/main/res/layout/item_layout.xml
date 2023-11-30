@@ -10,10 +10,11 @@
   >
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="6dp">
+        android:padding="6dp"
+        android:gravity="center_vertical">
 
         <ImageView
             android:layout_width="28dp"
@@ -45,6 +46,16 @@
                 android:text="081928289433"
                 android:textSize="16sp" />
         </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/baseline_delete_24"
+                android:layout_gravity="end|center_vertical"
+                android:id="@+id/iv_trash"/>
+        </FrameLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

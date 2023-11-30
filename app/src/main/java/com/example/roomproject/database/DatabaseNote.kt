@@ -4,9 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.roomproject.entities.LebihDariSatu
 import com.example.roomproject.entities.NoteEntity
 
-@Database(entities = [NoteEntity::class], version = 2)
+@Database(entities = [NoteEntity::class,LebihDariSatu::class], version = 2)
 abstract class DatabaseNote : RoomDatabase() {
     abstract fun dao(): Dao
 

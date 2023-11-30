@@ -17,6 +17,16 @@ class NoteViewModel(
             repo.insertData(data)
         }
 
+    fun updateData(data: NoteEntity) =
+        viewModelScope.launch {
+            repo.updateData(data)
+        }
+
+    fun deleteData(id:NoteEntity) =
+        viewModelScope.launch {
+            repo.deleteData(id)
+        }
+
     fun getNoteId(id:Int) =
         repo.getNoteId(id)
 

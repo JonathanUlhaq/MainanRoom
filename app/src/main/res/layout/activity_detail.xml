@@ -8,28 +8,34 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/il_logo"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:hint="Isi nama"
+        android:minHeight="48dp"/>
     <Space
         android:layout_width="wrap_content"
         android:layout_height="12dp"/>
-    <TextView
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="nama"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:id="@+id/tv_name"/>
+        android:hint="Isi Nomor Handphone"
+        android:minHeight="48dp"
+        android:inputType="number"/>
+
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="6dp"/>
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_height="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0123"
-        android:textSize="16sp"
-        android:id="@+id/tv_phone"/>
+        android:text="Ubah Data"
+        android:id="@+id/btn_add"/>
+
 
 </LinearLayout>
